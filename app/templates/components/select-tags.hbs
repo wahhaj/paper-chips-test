@@ -1,0 +1,17 @@
+{{paper-button label=buttonLabel onClick=(action "toggleFiller") primary=true raised=true}}
+
+{{#if showFiller}}
+  <div class="filler"></div>
+{{/if}}
+
+{{#paper-chips
+  placeholder="Tags"
+  content=selectedTags
+  options=availableTags
+  addItem=(action 'addTag')
+  removeItem=(action 'removeTag')
+  requireMatch=true as |specialty|}}
+  {{specialty}}
+{{/paper-chips}}
+
+<div style="padding-top: 100px;"></div>
